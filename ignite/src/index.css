@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+
+@import "tailwindcss";
+
+body {
+  background-color: var(--color-neutral2);
+  font-style: var(--font-Merriweather);
+}
+
+@theme {
+  --font-Merriweather: Merriweather, "sans-serif";
+  --font-Lora: Lora, "sans-serif";
+  --color-neutral1: #f8f5e1;
+  --color-neutral2: #fbf9ed;
+  --color-primary: #002366;
+  --color-primary2: #003580;
+  --color-secondary: #c9a400;
+  --color-secondary2: #a07d00;
+}
