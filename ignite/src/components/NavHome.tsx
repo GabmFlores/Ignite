@@ -1,13 +1,14 @@
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../assets/ignitelogo.png";
+import Button from "./Button";
 
 const NavHome = () => {
   const location = useLocation();
 
   const linkClass = (path: string) =>
     location.pathname === path
-      ? "text-primary2 font-bold underline underline-offset-8 decoration-2"
-      : "text-primary2";
+      ? "text-primary2 font-bold underline underline-offset-8 decoration-2 hover:text-primary2-light"
+      : "text-primary2 hover:text-primary2-light";
 
   return (
     <div className="mx-8">
@@ -27,7 +28,7 @@ const NavHome = () => {
           </NavLink>
         </div>
         <div className="flex items-center gap-4 justify-evenly text-[clamp(1.2rem,2vw,1.5rem)] mx-2">
-          <div>Sign In</div>
+          <Button variant="outline">Sign In</Button>
         </div>
       </div>
     </div>
