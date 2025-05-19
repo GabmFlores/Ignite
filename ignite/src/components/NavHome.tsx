@@ -18,20 +18,26 @@ const NavHome = () => {
     to,
     Icon,
     label,
+    variant = "default",
   }: {
     to: string;
     Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     label: string;
+    variant?: "default" | "drawer";
   }) => (
     <NavLink
       to={to}
       onClick={() => setMenuOpen(false)}
       className={({ isActive }) =>
-        `flex items-center gap-3 w-full cursor-pointer ${
+        [
+          "flex items-center gap-3 w-full px-4 py-2 rounded-md transition-colors cursor-pointer",
           isActive
             ? "text-primary2 font-bold underline underline-offset-8 decoration-2"
-            : "text-primary2 hover:text-primary2-light"
-        }`
+            : "text-primary2",
+          variant === "drawer"
+            ? "hover:bg-cyan-100"
+            : "hover:text-primary2-light",
+        ].join(" ")
       }
     >
       <Icon className="w-5 h-5" />
@@ -72,7 +78,7 @@ const NavHome = () => {
           <button
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
-            className="focus:outline-none"
+            className="focus:outline-none cursor-pointer"
           >
             <Menu className="text-primary2 w-[clamp(1.5rem,5vw,2rem)] h-[clamp(1.5rem,5vw,2rem)]" />
           </button>
@@ -89,16 +95,16 @@ const NavHome = () => {
           <button
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
-            className="focus:outline-none"
+            className="focus:outline-none cursor-pointer"
           >
             <X className="text-primary2 w-6 h-6" />
           </button>
         </div>
 
-        <nav className="flex flex-col items-start gap-6 px-6 text-[clamp(1.2rem,3vw,1.5rem)]">
-          <NavItem to="/" Icon={HomeIcon} label="Home" />
-          <NavItem to="/faq" Icon={HelpCircle} label="FAQ" />
-          <NavItem to="/about" Icon={Info} label="About" />
+        <nav className="flex flex-col items-start gap-6 px-6 text-[clamp(1.2rem,3vw,1.5rem) ]">
+          <NavItem variant="drawer" to="/" Icon={HomeIcon} label="Home" />
+          <NavItem variant="drawer" to="/faq" Icon={HelpCircle} label="FAQ" />
+          <NavItem variant="drawer" to="/about" Icon={Info} label="About" />
 
           <Button
             variant="outline"
