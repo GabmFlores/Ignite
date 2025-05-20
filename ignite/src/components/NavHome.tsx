@@ -47,7 +47,7 @@ const NavHome = () => {
 
   return (
     <div className="mx-[clamp(1rem,4vw,2rem)]">
-      <div className="flex shadow-xl justify-between items-center bg-white rounded-3xl p-[clamp(1rem,2vw,1.25rem)] my-[clamp(1rem,2vw,2rem)] max-w-4xl mx-auto">
+      <div className="flex shrink-0 shadow-xl justify-between items-center bg-white rounded-3xl p-[clamp(1rem,2vw,1.25rem)] my-[clamp(1rem,2vw,2rem)] max-w-4xl mx-auto">
         <a href="/">
           <img
             src={Logo}
