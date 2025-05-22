@@ -1,4 +1,8 @@
 import Button from "../components/Button";
+import FeatureCard from "../components/FeatureCard";
+import Logo from "../assets/adnu-logo.webp";
+import Match from "../assets/match.jpeg";
+import Privacy from "../assets/privacy.jpeg";
 
 const Home = () => {
   return (
@@ -15,6 +19,26 @@ const Home = () => {
       >
         Date Now
       </Button>
+      <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center gap-8 mt-6">
+        <FeatureCard
+          imgSrc={Logo}
+          imgAlt="ADNU"
+          title="Verified ADNU Students Only"
+          description='"No catfish, no strangers—just real connections with real students."'
+        />
+        <FeatureCard
+          imgSrc={Match}
+          imgAlt="Matches That Matter"
+          title="Matches That Matter"
+          description='"Fewer swipes, better dates, real conversations."'
+        />
+        <FeatureCard
+          imgSrc={Privacy}
+          imgAlt="Privacy"
+          title="Your Privacy, Our Priority"
+          description='"Safe, secure, and drama-free dating."'
+        />
+      </div>
     </div>
   );
 };
