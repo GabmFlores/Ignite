@@ -3,10 +3,12 @@ import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../assets/ignitelogo.png";
 import Button from "./Button";
 import { Menu, X, Home as HomeIcon, HelpCircle, Info } from "lucide-react";
+import { useLoginModal } from "./LoginModalContext";
 
 const NavHome = () => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { openModal } = useLoginModal();
 
   const linkClass = (path: string) =>
     location.pathname === path
@@ -70,7 +72,13 @@ const NavHome = () => {
         </div>
 
         <div className="hidden sm:flex items-center">
-          <Button variant="outline">Sign In</Button>
+          <Button
+            className="cursor-pointer"
+            onClick={openModal}
+            variant="outline"
+          >
+            Sign In
+          </Button>
         </div>
 
         {/* Mobile Menu Icon */}
@@ -109,8 +117,11 @@ const NavHome = () => {
 
           <Button
             variant="outline"
-            onClick={() => setMenuOpen(false)}
-            className="mt-6 w-50% mx-auto"
+            onClick={() => {
+              openModal();
+              setMenuOpen(false);
+            }}
+            className="mt-6 w-50% mx-auto cursor-pointer"
           >
             Sign In
           </Button>
