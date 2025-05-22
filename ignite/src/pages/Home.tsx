@@ -6,7 +6,7 @@ import Privacy from "../assets/privacy.jpeg";
 
 const Home = () => {
   return (
-    <div className="flex gap-[clamp(1rem,2vw,2rem)] flex-col items-center my-[clamp(2rem,4vw,4rem)] mx-auto px-4 text-center">
+    <div className="flex gap-[clamp(1rem,2vw,2rem)] flex-col items-center mt-[clamp(2rem,4vw,4rem)] mx-auto px-4 text-center">
       <h1 className="text-primary text-[clamp(2rem,5vw,3.5rem)] font-semibold leading-tight">
         Ateneo's Exclusive Dating App
       </h1>

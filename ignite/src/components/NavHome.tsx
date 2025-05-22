@@ -102,7 +102,7 @@ const NavHome = () => {
           </button>
         </div>
 
-        <nav className="flex flex-col items-start gap-6 px-6 text-[clamp(1.2rem,3vw,1.5rem) ]">
+        <nav className="flex flex-col items-start gap-6 px-6 text-[clamp(1.2rem,3vw,1.5rem)] overflow-y-auto max-h-full">
           <NavItem variant="drawer" to="/" Icon={HomeIcon} label="Home" />
           <NavItem variant="drawer" to="/faq" Icon={HelpCircle} label="FAQ" />
           <NavItem variant="drawer" to="/about" Icon={Info} label="About" />
