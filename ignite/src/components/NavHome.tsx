@@ -117,7 +117,12 @@ const NavHome = () => {
       </div>
 
       {/* Overlay */}
-      {menuOpen && <div onClick={() => setMenuOpen(false)} />}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black opacity-40"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
     </div>
   );
 };

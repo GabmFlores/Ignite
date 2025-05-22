@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import NavHome from "./components/NavHome";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import FAQ from "./pages/Faq";
-import About from "./pages/about";
+import About from "./pages/About";
 
 function App() {
   return (
