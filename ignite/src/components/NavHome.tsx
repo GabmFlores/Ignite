@@ -88,8 +88,9 @@ const NavHome = () => {
       {/* Drawer Menu */}
       <div
         className={`fixed top-0 right-0 h-full w-[clamp(12rem,50vw,16rem)] bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out
-          ${menuOpen ? "translate-x-0" : "translate-x-full"}
-        `}
+    ${menuOpen ? "translate-x-0" : "translate-x-full"}
+    overflow-y-auto
+  `}
       >
         <div className="flex justify-end p-4">
           <button
@@ -119,7 +120,7 @@ const NavHome = () => {
       {/* Overlay */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-40"
+          className="fixed z-45 inset-0 bg-black opacity-40"
           onClick={() => setMenuOpen(false)}
         />
       )}
