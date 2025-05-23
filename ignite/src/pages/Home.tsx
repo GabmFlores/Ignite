@@ -22,7 +22,7 @@ const Home = () => {
       >
         Date Now
       </Button>
-      <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center gap-8 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center gap-8 mt-6 mb-3">
         <FeatureCard
           imgSrc={Logo}
           imgAlt="ADNU"
