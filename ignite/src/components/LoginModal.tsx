@@ -1,7 +1,17 @@
 import { useLoginModal } from "../components/LoginModalContext";
+import { useAuth } from "../store/AuthContext";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const LoginModal = () => {
   const { isOpen, closeModal } = useLoginModal();
+  const { login } = useAuth();
+  const navigate = useNavigate(); // Initialize navigate
+
+  const handleSignIn = () => {
+    login(); // Call your login logic
+    closeModal(); // Close modal
+    navigate("/dashboard"); // Navigate to dashboard immediately
+  };
 
   if (!isOpen) return null;
 
@@ -45,18 +55,31 @@ const LoginModal = () => {
           placeholder="Password"
           className="w-full mb-3 px-4 py-2 border rounded"
         />
-        <button className="w-full bg-primary2 text-white py-2 rounded mb-3 cursor-pointer">
+        <button
+          onClick={handleSignIn}
+          className="w-full bg-primary2 text-white py-2 rounded mb-3 cursor-pointer"
+        >
           Sign In
         </button>
         <div className="text-center text-sm mb-3 text-gray-500">or</div>
-        <button className="w-full border border-gray-300 py-2 rounded hover:bg-gray-100 cursor-pointer">
+        <button
+          onClick={handleSignIn}
+          className="w-full border border-gray-300 py-2 rounded hover:bg-gray-100 cursor-pointer"
+        >
           Sign in with Google
         </button>
 
         {/* Registration prompt */}
         <div className="text-center text-sm mt-4 text-gray-600">
           Don’t have an account?{" "}
-          <a href="/register" className="text-primary2 hover:underline">
+          <a
+            href="/register"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSignIn();
+            }}
+            className="text-primary2 hover:underline"
+          >
             Register
           </a>
         </div>
